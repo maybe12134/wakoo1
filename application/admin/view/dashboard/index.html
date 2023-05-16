@@ -1,0 +1,305 @@
+<style type="text/css">
+    .tab-content > .chart {
+        padding: 10px;
+    }
+    .sm-st {
+        background: #fff;
+        padding: 20px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        margin-bottom: 20px;
+    }
+
+    .sm-st-icon {
+        width: 60px;
+        height: 60px;
+        display: inline-block;
+        line-height: 60px;
+        text-align: center;
+        font-size: 30px;
+        background: #eee;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        float: left;
+        margin-right: 10px;
+        color: #fff;
+    }
+
+    .sm-st-info {
+        padding-top: 2px;
+    }
+
+    .sm-st-info span {
+        display: block;
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    .sm-st .green {
+        background: #86ba41 !important;
+    }
+
+    .st-red {
+        background-color: #F05050;
+    }
+
+    .st-green {
+        background-color: #27C24C;
+    }
+
+    .st-violet {
+        background-color: #7266ba;
+    }
+
+    .st-blue {
+        background-color: #23b7e5;
+    }
+
+    .stats .stat-icon {
+        color: #28bb9c;
+        display: inline-block;
+        font-size: 26px;
+        text-align: center;
+        vertical-align: middle;
+        width: 50px;
+        float: left;
+    }
+
+    .stat .value {
+        font-size: 20px;
+        line-height: 24px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-weight: 500;
+    }
+
+    .stat .name {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 5px 0;
+    }
+
+    .stat.lg .value {
+        font-size: 26px;
+        line-height: 28px;
+    }
+
+    .stat.lg .name {
+        font-size: 16px;
+    }
+
+    .stat-col .progress {
+        height: 2px;
+    }
+
+    .stat-col .progress-bar {
+        line-height: 2px;
+        height: 2px;
+    }
+
+    #statistics .panel {
+        min-height: 150px;
+    }
+
+    #statistics .panel h5 {
+        font-size: 14px;
+    }
+</style>
+</style>
+<div class="row">
+    <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-aqua">
+            <div class="inner">
+                <h3>{$number}</h3>
+
+                <p>今日订单</p>
+            </div>
+            <div class="icon">
+                <i class="fa fa-shopping-cart"></i>
+            </div>
+            <a href="#" class="small-box-footer"><i class="fa"></i></a>
+        </div>
+    </div>
+    <!-- ./col -->
+    <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-green">
+            <div class="inner">
+                <h3>{$growth}%</h3>
+
+                <p>同比增长率</p>
+            </div>
+            <div class="icon">
+                <i class="fa fa-area-chart"></i>
+            </div>
+            <a href="#" class="small-box-footer"><i class="fa"></i></a>
+        </div>
+    </div>
+    <!-- ./col -->
+    <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-yellow">
+            <div class="inner">
+                <h3>{$usernum}</h3>
+                <p>今日注册用户数</p>
+            </div>
+            <div class="icon">
+                <i class="fa fa-users"></i>
+            </div>
+            <a href="#" class="small-box-footer"><i class="fa"></i></a>
+        </div>
+    </div>
+    <!-- ./col -->
+    <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-red">
+            <div class="inner">
+                <h3>{$visitor}</h3>
+                <p>唯一访客用户</p>
+            </div>
+            <div class="icon">
+                <i class="fa fa-user"></i>
+            </div>
+            <a href="#" class="small-box-footer"><i class="fa"></i></a>
+        </div>
+    </div>
+    <!-- ./col -->
+</div>
+<div class="row">
+    <div class="col-sm-3 col-xs-6">
+        <div class="sm-st clearfix">
+            <span class="sm-st-icon st-red"><i class="fa fa-users"></i></span>
+            <div class="sm-st-info">
+                <span>{$unum}</span>
+                {:__('Total user')}
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3 col-xs-6">
+        <div class="sm-st clearfix">
+            <span class="sm-st-icon st-violet"><i class="fa fa-magic"></i></span>
+            <div class="sm-st-info">
+                <span>{$typenum}</span>
+                {:__('Total addon')}
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3 col-xs-6">
+        <div class="sm-st clearfix">
+            <span class="sm-st-icon st-blue"><i class="fa fa-leaf"></i></span>
+            <div class="sm-st-info">
+                <span>{$videonum}</span>
+                {:__('Total attachment')}
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3 col-xs-6">
+        <div class="sm-st clearfix">
+            <span class="sm-st-icon st-green"><i class="fa fa-user"></i></span>
+            <div class="sm-st-info">
+                <span>{$adminum}</span>
+                {:__('Total admin')}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.row -->
+<!-- Main row -->
+<div class="row" style="margin-bottom:5px;">
+    <!-- Left col -->
+    <section class="col-lg-7 connectedSortable">
+        <!-- Custom tabs (Charts with tabs)-->
+        <div class="nav-tabs-custom charts-custom">
+            <!-- Tabs within a box -->
+            <ul class="nav nav-tabs pull-right">
+                <li class="active"><a href="#line-chart" data-toggle="tab">折线图</a></li>
+                <li><a href="#area-chart" data-toggle="tab">区域图</a></li>
+                <li class="pull-left header"><i class="fa fa-inbox"></i> 销售趋势</li>
+            </ul>
+            <div class="tab-content no-padding">
+                <!-- Morris chart - Sales -->
+                <div class="chart tab-pane active" id="line-chart" style="position: relative; height: 300px;"></div>
+                <div class="chart tab-pane" id="area-chart" style="position: relative; height: 300px;"></div>
+            </div>
+        </div>
+        <div class="nav-tabs-custom charts-custom">
+            <!-- Tabs within a box -->
+            <ul class="nav nav-tabs pull-right">
+                <li class="active"><a href="#pie-chart" data-toggle="tab">饼图</a></li>
+                <li class="pull-left header"><i class="fa fa-inbox"></i> 销售记录</li>
+            </ul>
+            <div class="tab-content no-padding">
+                <!-- Morris chart - Sales -->
+                <div class="chart tab-pane active" id="pie-chart" style="position: relative; height: 300px;"></div>
+                <div class="chart tab-pane" id="bar-chart" style="position: relative; height: 300px;"></div>
+            </div>
+        </div>
+        <!-- /.nav-tabs-custom -->
+
+    </section>
+    <!-- /.Left col -->
+    <section class="col-lg-5 connectedSortable">
+
+        <!-- Map box -->
+        <div class="box box-solid bg-light-blue-gradient">
+            <div class="box-header">
+                <!-- tools box -->
+                <div class="pull-right box-tools">
+                </div>
+                <!-- /. tools -->
+
+                <i class="fa fa-map-marker"></i>
+
+                <h3 class="box-title">
+                    访客分布
+                </h3>
+            </div>
+            <div class="box-body">
+                <div  id="simplebar-chart" style="height: 250px; width: 100%;"></div>
+            </div>
+            <!-- /.box-body-->
+            <div class="box-footer no-border">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <div class="knob-label">统计最近一周访客的记录</div>
+                    </div>
+                    <!-- ./col -->
+                </div>
+                <!-- /.row -->
+            </div>
+        </div>
+        <!-- /.box -->
+
+        <!-- solid sales graph -->
+        <div class="box box-solid bg-teal-gradient">
+            <div class="box-header">
+                <i class="fa fa-th"></i>
+
+                <h3 class="box-title">订单趋势</h3>
+
+                <div class="box-tools pull-right">
+                </div>
+            </div>
+            <div class="box-body border-radius-none">
+                <div class="chart" id="smoothline-chart" style="height: 250px;"></div>
+            </div>
+            <!-- /.box-body-->
+            <div class="box-footer no-border">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <div class="knob-label">统计最近一周订单的趋势</div>
+                    </div>
+                    <!-- ./col -->
+                </div>
+                <!-- /.row -->
+            </div>
+        </div>
+        <!-- /.box -->
+
+    </section>
+    <!-- right col -->
+</div>
+<!-- /.row (main row) -->

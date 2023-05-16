@@ -1,0 +1,88 @@
+<style>
+    .tab{
+        width:237px;
+        padding: 4px;
+    }
+</style>
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+   
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Type')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="v-ftype" data-rule="required" data-source="teach/class_video/ftype" data-field="type" data-pagination="true" data-page-size="10" class="form-control selectpage tab" name="row[ftype]" type="text">
+            <span style="line-height:200%;">&nbsp;&nbsp;</span>
+            <input id="v-ptype" data-rule="required" data-source="teach/class_video/sky" data-field="type" data-pagination="true" data-page-size="10" class="form-control selectpage tab" name="row[class_type_id]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Title')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-title" data-rule="required" class="form-control" name="row[title]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Which')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-which" data-rule="required" class="form-control" name="row[which]" type="number">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Video_image')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-video_image" class="form-control" size="50" name="row[video_image]" type="text">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="faupload-video_image" class="btn btn-danger faupload" data-input-id="c-video_image" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp,image/webp" data-multiple="false" data-preview-id="p-video_image"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-video_image" class="btn btn-primary fachoose" data-input-id="c-video_image" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-video_image"></span>
+            </div>
+            <ul class="row list-inline faupload-preview" id="p-video_image"></ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Video')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-video" class="form-control" size="100" name="row[video]" type="text">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="faupload-video" class="btn btn-danger faupload" data-input-id="c-video" data-mimetype="video/mp4" data-multiple="false" data-preview-id="p-video"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-video" class="btn btn-primary fachoose" data-input-id="c-video" data-mimetype="video/mp4" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-video"></span>
+            </div>
+            <ul class="row list-inline faupload-preview" id="p-video"></ul>
+        </div>
+    </div>
+    <div class="form-group" style="display:none">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Long')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-long" readonly class="form-control" name="row[long]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Video_introduction')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-video_introduction" data-rule="required" class="editor form-control" name="row[video_introduction]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Create_time')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-create_time" data-rule="required" class="form-control datetimepicker" readonly data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[create_time]" type="text" value="{:date('Y-m-d H:i:s')}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Update_time')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-update_time" data-rule="required" class="form-control datetimepicker" readonly data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[update_time]" type="text" value="{:date('Y-m-d H:i:s')}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8 text-center">
+            <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>
